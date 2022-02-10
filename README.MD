@@ -23,3 +23,7 @@ mysql> create table `contact` (
 ```
 mysql> show tables;
 ```
+
+```
+desc contact;
+```
