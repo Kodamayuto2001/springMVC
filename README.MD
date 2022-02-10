@@ -1,6 +1,6 @@
 # v4-gradle-springframework
 
-### Database Commands
+### MySQL Commands
 ```
 mysql> create database contactdb;
 ```
