@@ -1,4 +1,4 @@
-# springMVC
+# v4-gradle-springframework
 
 ### データベース
 ```
