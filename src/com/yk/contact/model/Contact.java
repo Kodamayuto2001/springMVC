@@ -28,9 +28,12 @@ public class Contact {
 	private String address;
 	private String phone;
 
-	protected Contact(Integer id, String name, String email, String address, String phone) {
-		super();
+	public Contact(Integer id, String name, String email, String address, String phone) {
+		this(name, email, address, phone);
 		this.id = id;
+	}
+
+	public Contact(String name, String email, String address, String phone) {
 		this.name = name;
 		this.email = email;
 		this.address = address;
