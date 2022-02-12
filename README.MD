@@ -1,4 +1,4 @@
-# v4-gradle-springframework
+# v4-gradle-springframework -memo
 
 ### MySQL Commands
 ```
