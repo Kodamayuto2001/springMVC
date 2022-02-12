@@ -1,6 +1,18 @@
 # v4-gradle-springframework -memo
 
+### wsl2:Ubuntu20.04 MySQL start
+```
+$ sudo service mysql start
+[sudo] password for yuto: ****
+```
+### wsl2:Ubuntu20.04 MySQL login
+```
+$ sudo mysql -u root -p
+Enter password: *********************
+```
+
 ### MySQL Commands
+
 ```
 mysql> create database contactdb;
 ```
@@ -25,5 +37,5 @@ mysql> show tables;
 ```
 
 ```
-desc contact;
+mysql> desc contact;
 ```
