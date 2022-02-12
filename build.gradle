@@ -23,6 +23,11 @@ sourceSets {
     	java.outputDir = file('bin')
     	output.resourcesDir = file('bin')
   	}
+  	test {
+  		java {
+  			srcDir 'test'
+  		}
+  	}
 }
 
  repositories {
@@ -58,5 +63,15 @@ sourceSets {
 	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
 	implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.15'
 
+	// jUnit5を使用するためコメントアウト
+	// https://mvnrepository.com/artifact/junit/junit
+	// testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 
- }
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
