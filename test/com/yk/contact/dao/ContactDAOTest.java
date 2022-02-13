@@ -53,7 +53,14 @@ class ContactDAOTest {
 
 	@Test
 	void testGet() {
-		fail("まだ実装されていません");
+		Integer id = 1;
+		Contact contact = dao.get(id);
+
+		if (contact != null) {
+			System.out.println(contact);
+		}
+
+		assertNotNull(contact);
 	}
 
 	@Test
