@@ -2,6 +2,8 @@ package com.yk.contact.dao;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -73,7 +75,13 @@ class ContactDAOTest {
 
 	@Test
 	void testList() {
-		fail("まだ実装されていません");
+		List<Contact> listContacts = dao.list();
+
+		for (Contact aContact : listContacts) {
+			System.out.println(aContact);
+		}
+
+		assertTrue(!listContacts.isEmpty());
 	}
 
 }
