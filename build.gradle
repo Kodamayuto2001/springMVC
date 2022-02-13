@@ -79,9 +79,9 @@ sourceSets {
 
 }
 
-test {
-    useJUnitPlatform()
-}
+//test {
+//    useJUnitPlatform()
+//}
 
 compileJava.options.encoding = 'UTF-8'
 
