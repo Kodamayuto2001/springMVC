@@ -74,6 +74,8 @@ sourceSets {
 	// https://mvnrepository.com/artifact/io.github.cdimascio/java-dotenvi
 	implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.2.2'
 
+	// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
 }
 
@@ -81,3 +83,8 @@ test {
     useJUnitPlatform()
 }
 
+compileJava.options.encoding = 'UTF-8'
+
+compileTestJava.options.encoding = 'UTF-8'
+
+javadoc.options.encoding = 'UTF-8'
