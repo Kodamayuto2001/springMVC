@@ -57,8 +57,8 @@ public class ContactDAOImpl implements ContactDAO {
 
 	@Override
 	public int delete(Integer id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
+		String sql = "DELETE FROM contact WHERE contact_id=" + id;
+		return jdbcTemplate.update(sql);
 	}
 
 	@Override
