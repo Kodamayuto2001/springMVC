@@ -2,6 +2,7 @@ package com.yk.contact.dao;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -16,8 +17,8 @@ class ContactDAOTest {
 	private DriverManagerDataSource dataSource;
 	private ContactDAO dao;
 
-	@Test
-	void testSave() {
+	@BeforeEach
+	void setupBeforeEach() {
 		Dotenv dotenv = Dotenv.load();
 		String USER_ROLE = dotenv.get("USER_ROLE");
 		String PASSWORD = dotenv.get("PASSWORD");
@@ -32,9 +33,11 @@ class ContactDAOTest {
 		dataSource.setPassword(PASSWORD);
 
 		dao = new ContactDAOImpl(dataSource);
+	}
 
-		Contact contact = new Contact("Hoge piyo", "hoge@hoge.com", "Japan", "000000000");
-
+	@Test
+	void testSave() {
+		Contact contact = new Contact("ダーマ", "ダーマ@ダーマ.com", "Japan", "123456789");
 		int result = dao.save(contact);
 
 		assertTrue(result > 0);
@@ -42,7 +45,10 @@ class ContactDAOTest {
 
 	@Test
 	void testUpdate() {
-		fail("まだ実装されていません");
+		Contact contact = new Contact(1, "ダーマ-test", "ダーマ-test@ダーマ.com", "Japan", "9876543210");
+		int result = dao.update(contact);
+
+		assertTrue(result > 0);
 	}
 
 	@Test
