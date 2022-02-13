@@ -1,10 +1,14 @@
 package com.yk.contact.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import com.yk.contact.model.Contact;
 
@@ -30,8 +34,25 @@ public class ContactDAOImpl implements ContactDAO {
 
 	@Override
 	public Contact get(Integer id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		String sql = "SELECT * FROM contact WHERE contact_id=" + id;
+
+		ResultSetExtractor<Contact> extractor = new ResultSetExtractor<Contact>() {
+
+			@Override
+			public Contact extractData(ResultSet rs) throws SQLException, DataAccessException {
+				if (rs.next()) {
+					String name = rs.getString("name");
+					String email = rs.getString("email");
+					String address = rs.getString("address");
+					String phone = rs.getString("phone");
+
+					return new Contact(id, name, email, address, phone);
+				}
+				return null;
+			}
+		};
+
+		return jdbcTemplate.query(sql, extractor);
 	}
 
 	@Override
