@@ -65,7 +65,10 @@ class ContactDAOTest {
 
 	@Test
 	void testDelete() {
-		fail("まだ実装されていません");
+		Integer id = 4;
+		int result = dao.delete(id);
+
+		assertTrue(result > 0);
 	}
 
 	@Test
