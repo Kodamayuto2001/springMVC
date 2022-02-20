@@ -2,6 +2,8 @@
 
 ### memo
 - 2月20日 14時25分　build.gradleやConfigのプログラムファイル、ビルドした際のファイルが実験と検証を繰り返し行った結果、ぐちゃぐちゃになり、今までアクセスできていたuriにアクセスできなくなったので、feature-yk-webapp-devは git stashして、新しくfeature-yk-webapp-vanillaを作成した。
+- だめだ。WEB-INF下に.jspファイルを設定するのが、springframeworkで頑張ったが、できなかった。
+- 書籍を読みます。
 
 ### wsl2:Ubuntu20.04 MySQL start
 ```
